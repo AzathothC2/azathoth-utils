@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 license="MIT"
 repository = "https://github.com/AzathothC2/azathoth_utils"
+description = "Small utilities crate for the AzathothC2 framework"
 
 [dependencies]
 azathoth-core = "0.1.1"
