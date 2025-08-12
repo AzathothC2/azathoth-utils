@@ -3,6 +3,10 @@
 A collection of `no-std` utilities used by the [AzathothC2 framework](https://github.com/AzathothC2/)
 Modules are feature-gated for minimal binary size and can be enabled as needed.
 
+>[!WARNING]
+> **Be advised that this is still a WIP crate and may change at any time! (Unstable)**
+
+
 ## Features
 
 * `hasher` – Identifier/symbol hashing helpers for obfuscated lookups.
@@ -31,9 +35,6 @@ use azathoth_utils::crc32;
 let checksum = crc32(b"deadbeef");
 assert_eq!(checksum, 0x52_8f_6f_ca);
 ```
-
->[!WARNING]
-> **Be advised that this is still a WIP crate and may change at any time! (Unstable)**
 
 ## License
 MIT
