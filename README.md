@@ -32,7 +32,7 @@ let checksum = crc32(b"deadbeef");
 assert_eq!(checksum, 0x52_8f_6f_ca);
 ```
 
->![WARNING]
+>[!WARNING]
 > **Be advised that this is still a WIP crate and may change at any time! (Unstable)**
 
 ## License
