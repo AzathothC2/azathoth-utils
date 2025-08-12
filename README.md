@@ -1,4 +1,5 @@
 # azathoth_utils
+![Crates.io Version](https://img.shields.io/crates/v/azathoth-utils)
 
 A collection of `no-std` utilities used by the [AzathothC2 framework](https://github.com/AzathothC2/)
 Modules are feature-gated for minimal binary size and can be enabled as needed.
