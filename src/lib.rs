@@ -33,20 +33,20 @@ extern crate alloc;
 /// by other feature-gated modules in this crate.
 pub mod errors;
 
-#[cfg(feature="hasher")]
+#[cfg(feature = "hasher")]
 /// Identifier and symbol hashing helpers.
 ///
 /// Typical use-cases include obfuscated or stable hash-based lookups where
 /// string literals are undesirable at runtime.
 pub mod hasher;
 
-#[cfg(feature="formatter")]
+#[cfg(feature = "formatter")]
 /// Lightweight formatting helpers.
 ///
 /// Useful in `no_std` contexts where calling the `alloc` crate formatter and related functions can cause crashes
 pub mod formatter;
 
-#[cfg(feature="psearch")]
+#[cfg(feature = "psearch")]
 /// Extendable pattern search utilities over byte slices.
 ///
 /// Provides building blocks for scanning memory regions with optional wildcard support
@@ -78,3 +78,14 @@ pub fn crc32(data: impl AsRef<[u8]>) -> u32 {
     }
     !crc
 }
+
+#[cfg(feature = "formatter")]
+#[macro_export]
+macro_rules! format_str {
+     ($fmt:literal $(, $arg:expr)* $(,)?) => {{
+            $crate:format_str_inner($fmt, &($($arg,)*))
+     }};
+}
+
+#[cfg(feature = "formatter")]
+pub use formatter::format_str_inner;

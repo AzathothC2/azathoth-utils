@@ -95,7 +95,7 @@ impl FormatSpec {
 }
 /// Custom formatter replacement for the [`core::fmt::Display`] trait
 pub trait FDisplay {
-    /// The caller must implement this function to use the [`crate::format_str!`] macro
+    /// The caller must implement this function to use the [`crate::format_str_inner!`] macro
     fn fmt<W: WriteBuffer>(&self, w: &mut W, spec: &FormatSpec) -> AzUtilResult<()>;
 }
 
@@ -337,8 +337,8 @@ where
     Ok(())
 }
 
-/// Wrapper around the [`format_rt`] function to simplify the [`crate::format_str()`] macro definition
-pub fn format_str<A: FormatArgs>(fmt: &str, args: &A) -> String {
+/// Wrapper around the [`format_rt`] function to simplify the [`crate::format_str_inner!`] macro definition
+pub fn format_str_inner<A: FormatArgs>(fmt: &str, args: &A) -> String {
     let mut buffer = AllocString::new();
     match format_rt(&mut buffer, fmt, args) {
         Ok(()) => buffer.into_string().expect(""),

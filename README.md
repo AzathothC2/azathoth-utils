@@ -21,11 +21,11 @@ Modules are feature-gated for minimal binary size and can be enabled as needed.
 Add the crate via Cargo:
 ```cargo add azathoth_utils```
 
-Or manually in `Cargo.toml`: ```azathoth_utils = "0.1.0";```
+Or manually in `Cargo.toml`: ```azathoth_utils = "0.1.1";```
 
 Enable optional features as needed:
 ```
-azathoth_utils = { version = "0.1.0", features = ["hasher", "psearch"] }
+azathoth_utils = { version = "0.1.1", features = ["hasher", "psearch"] }
 ```
 
 ## Example: CRC32 checksum
