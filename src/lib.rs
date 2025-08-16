@@ -83,7 +83,7 @@ pub fn crc32(data: impl AsRef<[u8]>) -> u32 {
 #[macro_export]
 macro_rules! format_str {
      ($fmt:literal $(, $arg:expr)* $(,)?) => {{
-            $crate:format_str_inner($fmt, &($($arg,)*))
+            $crate::format_str_inner($fmt, &($($arg,)*))
      }};
 }
 
